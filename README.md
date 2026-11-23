@@ -4,6 +4,10 @@ Official code for the paper **[A Hybrid CNN–State Space Model with Systematic 
 
 PlantXMamba combines a lightweight VGG16 backbone for local feature extraction with Mamba blocks for long-range context modeling in plant disease recognition.
 
+## Architecture
+
+![PlantXMamba architecture from RGB leaf image through VGG16, patch embedding, Mamba, and classification](assets/architecture.jpg)
+
 ## Quick start
 
 Run from the repository root. The CPU example was checked with Python 3.13, PyTorch 2.9.1, and TorchVision 0.24.1.
