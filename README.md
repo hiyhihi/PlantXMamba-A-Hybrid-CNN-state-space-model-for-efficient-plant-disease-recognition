@@ -8,6 +8,10 @@ PlantXMamba combines a lightweight VGG16 backbone for local feature extraction w
 
 ![PlantXMamba architecture from RGB leaf image through VGG16, patch embedding, Mamba, and classification](assets/architecture.jpg)
 
+| Parameters | GFLOPs | Weights (float32) |
+| ---: | ---: | ---: |
+| 0.47M | 4.73 | 1.79 MB |
+
 ## Quick start
 
 Run from the repository root. The CPU example was checked with Python 3.13, PyTorch 2.9.1, and TorchVision 0.24.1.
@@ -39,6 +43,18 @@ This example checks the forward pass with random input and untrained weights. Th
 | Embrapa | 93 | 89.34% |
 | PlantVillage | 38 | 98.76% |
 
+## Datasets
+
+The datasets are not redistributed here. Sources:
+
+| Dataset | Source | Reference |
+| --- | --- | --- |
+| PlantVillage | [Kaggle: abdallahalidev/plantvillage-dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) (color) | Hughes & Salathé, arXiv:1511.08060, 2015 |
+| Apple | [Kaggle: Plant Pathology 2020 – FGVC7](https://www.kaggle.com/c/plant-pathology-2020-fgvc7) | Thapa et al., *Applications in Plant Sciences* 8(9), 2020 |
+| Embrapa | [Digipathos repository](https://www.digipathos-rep.cnptia.embrapa.br/) | Barbedo et al., *IEEE Latin America Transactions* 16(6), 2018 |
+| Maize | Kaggle copy | Chen et al., *Computers and Electronics in Agriculture* 173, 2020 |
+| Rice | Kaggle copy | Chen et al., *Computers and Electronics in Agriculture* 173, 2020 |
+
 ## Citation
 
 ```bibtex
@@ -55,4 +71,8 @@ This example checks the forward pass with random input and untrained weights. Th
 }
 ```
 
-The Mamba implementation is adapted from Alexandre TL's [mamba.py](https://github.com/alxndrTL/mamba.py), distributed under the [MIT License](https://github.com/alxndrTL/mamba.py/blob/main/LICENSE).
+GitHub also shows a "Cite this repository" button generated from `CITATION.cff`.
+
+## Acknowledgements
+
+The Mamba implementation is adapted from Alexandre TL's [mamba.py](https://github.com/alxndrTL/mamba.py), distributed under the MIT License (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
