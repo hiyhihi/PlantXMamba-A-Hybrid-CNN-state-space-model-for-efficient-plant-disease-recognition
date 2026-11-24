@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plantxmamba"
+version = "0.1.0"
+description = "PlantXMamba: a hybrid CNN–state space model for efficient plant disease recognition"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0", "torchvision>=0.15"]
+
+[tool.setuptools]
+packages = ["plantxmamba"]
