@@ -67,8 +67,6 @@ This example checks the forward pass with random input and untrained weights. Th
 }
 ```
 
-GitHub also shows a "Cite this repository" button generated from `CITATION.cff`.
-
 ## Acknowledgements
 
 The Mamba implementation is adapted from Alexandre TL's [mamba.py](https://github.com/alxndrTL/mamba.py), distributed under the MIT License (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
