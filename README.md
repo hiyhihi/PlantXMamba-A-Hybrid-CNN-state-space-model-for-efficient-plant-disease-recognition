@@ -8,6 +8,18 @@ PlantXMamba combines a lightweight VGG16 backbone for local feature extraction w
 
 ![PlantXMamba architecture from RGB leaf image through VGG16, patch embedding, Mamba, and classification](assets/architecture.jpg)
 
+| Stage | Output |
+| --- | --- |
+| Input RGB image | 3 × 224 × 224 |
+| First two VGG16 blocks (ImageNet-pretrained) | 128 × 56 × 56 |
+| Patch embedding, 5 × 5 patches | 121 tokens × 16 |
+| 4 Mamba modules (2 Mamba layers each) | 121 × 16 |
+| LayerNorm → global average pooling → linear | class logits |
+
+| Parameters | GFLOPs | Weights (float32) |
+| ---: | ---: | ---: |
+| 0.47M | 4.73 | 1.79 MB |
+
 ## Quick start
 
 Run from the repository root. The CPU example was checked with Python 3.13, PyTorch 2.9.1, and TorchVision 0.24.1.
@@ -55,4 +67,6 @@ This example checks the forward pass with random input and untrained weights. Th
 }
 ```
 
-The Mamba implementation is adapted from Alexandre TL's [mamba.py](https://github.com/alxndrTL/mamba.py), distributed under the [MIT License](https://github.com/alxndrTL/mamba.py/blob/main/LICENSE).
+## Acknowledgements
+
+The Mamba implementation is adapted from Alexandre TL's [mamba.py](https://github.com/alxndrTL/mamba.py), distributed under the MIT License (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
