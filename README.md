@@ -8,6 +8,14 @@ PlantXMamba combines a lightweight VGG16 backbone for local feature extraction w
 
 ![PlantXMamba architecture from RGB leaf image through VGG16, patch embedding, Mamba, and classification](assets/architecture.jpg)
 
+| Stage | Output |
+| --- | --- |
+| Input RGB image | 3 × 224 × 224 |
+| First two VGG16 blocks (ImageNet-pretrained) | 128 × 56 × 56 |
+| Patch embedding, 5 × 5 patches | 121 tokens × 16 |
+| 4 Mamba modules (2 Mamba layers each) | 121 × 16 |
+| LayerNorm → global average pooling → linear | class logits |
+
 | Parameters | GFLOPs | Weights (float32) |
 | ---: | ---: | ---: |
 | 0.47M | 4.73 | 1.79 MB |
@@ -42,18 +50,6 @@ This example checks the forward pass with random input and untrained weights. Th
 | Rice | 5 | 98.33% |
 | Embrapa | 93 | 89.34% |
 | PlantVillage | 38 | 98.76% |
-
-## Datasets
-
-The datasets are not redistributed here. Sources:
-
-| Dataset | Source | Reference |
-| --- | --- | --- |
-| PlantVillage | [Kaggle: abdallahalidev/plantvillage-dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) (color) | Hughes & Salathé, arXiv:1511.08060, 2015 |
-| Apple | [Kaggle: Plant Pathology 2020 – FGVC7](https://www.kaggle.com/c/plant-pathology-2020-fgvc7) | Thapa et al., *Applications in Plant Sciences* 8(9), 2020 |
-| Embrapa | [Digipathos repository](https://www.digipathos-rep.cnptia.embrapa.br/) | Barbedo et al., *IEEE Latin America Transactions* 16(6), 2018 |
-| Maize | Kaggle copy | Chen et al., *Computers and Electronics in Agriculture* 173, 2020 |
-| Rice | Kaggle copy | Chen et al., *Computers and Electronics in Agriculture* 173, 2020 |
 
 ## Citation
 
